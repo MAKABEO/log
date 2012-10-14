@@ -1,0 +1,18 @@
+﻿@{
+    var info = new Informacion();
+    if(IsPost)
+    {
+        var usuario = Request.Form["nombre"];
+        var contrasena = Request.Form["password"];
+
+        if(@Informacion.IsUsuario(usuario,contrasena))
+        {
+            Response.Redirect("~/logon");
+        }
+        else
+        {
+            Response.Redirect("~/logfail");
+        }
+    }  
+}
+
